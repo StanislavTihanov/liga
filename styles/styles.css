@@ -119,7 +119,7 @@ address {
   --border-radius: 10px;
   --border-radius-small: 5px;
   --shadow: 0px 0px 20px 0px var(--color-black);
-  --font-family-base: "Montserrat", sans-serif;
+  --font-family-base: "Montserrat", Arial, sans-serif;
   --container-width: 91.21rem;
   --container-padding-x: 0.6rem;
   --section-padding-y: 3.13rem;
@@ -633,6 +633,52 @@ section {
 }
 
 /*----------------------------------form--------------------------------*/
+/*----------------------------------radio-buttons--------------------------------*/
+.radio-button input[type=radio] {
+  display: none;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 156%;
+  color: #ADB3BF;
+}
+
+.custom-radio {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--color-blue);
+  border-radius: 2px;
+  margin-right: 10px;
+  position: relative;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.radio-button:hover .custom-radio {
+  border-color: #007BFF;
+}
+
+.radio-button input[type=radio]:checked + .custom-radio {
+  border-color: #007BFF;
+  color: var(--color-white);
+}
+
+.radio-button input[type=radio]:checked + .custom-radio::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-blue);
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*----------------------------------radio-buttons--------------------------------*/
 /*----------------------------------accordion--------------------------------*/
 .accordion__block {
   margin-bottom: 1.5rem;
@@ -755,112 +801,49 @@ input[type=radio] {
 }
 
 /*---------------------------------------tabs----------------------------*/
-/*----------------------------------radiobtn--------------------------------*/
-.radio-group {
+/*----------------------------------masonry--------------------------------*/
+.masonry {
+  max-width: 50rem;
+  margin: 0 auto;
   display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 10px;
+  height: 500px;
 }
-
-.radio-button input[type=radio] {
-  display: none;
-}
-
-.radio-button {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 156%;
-  color: #ADB3BF;
-}
-
-.custom-radio {
-  width: 12px;
-  height: 12px;
-  border: 1px solid var(--color-blue);
-  border-radius: 2px;
-  margin-right: 10px;
-  position: relative;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.radio-button:hover .custom-radio {
-  border-color: #007BFF;
-}
-
-.radio-button input[type=radio]:checked + .custom-radio {
-  border-color: #007BFF;
-  color: var(--color-white);
-}
-
-.radio-button input[type=radio]:checked + .custom-radio::after {
+.masonry::before, .masonry::after {
   content: "";
-  width: 6px;
-  height: 6px;
-  background-color: var(--color-blue);
-  border-radius: 1px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  flex-basis: 100%;
+  order: 2;
+  width: 0;
+}
+.masonry__block {
+  width: calc(33.3333333333% - 1rem);
+  padding: 0.5rem;
+}
+.masonry__block:nth-child(3n+1) {
+  order: 1;
+}
+.masonry__block:nth-child(3n+2) {
+  order: 2;
+}
+.masonry__block:nth-child(3n) {
+  order: 3;
+}
+.masonry__block:nth-child(4n+1) {
+  background-color: #8c4ff6;
+}
+.masonry__block:nth-child(4n+2) {
+  background-color: rgb(2, 250, 226);
+}
+.masonry__block:nth-child(4n+3) {
+  background-color: #237ff8;
+}
+.masonry__block:nth-child(4n) {
+  background-color: #ffff00;
 }
 
-.radio-button input[type=radio]:checked + .custom-radio + .label-text {
-  color: var(--color-white);
-}
-
-/*----------------------------------radiobtn--------------------------------*/
-/*----------------------------------checkbox--------------------------------*/
-.checkbox {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-.checkbox._error .checkbox__label::before {
-  border: 1px solid red;
-}
-.checkbox__input {
-  display: none;
-}
-.checkbox__input:checked + .checkbox__label::after {
-  transform: scale(1);
-}
-.checkbox__label {
-  font-size: clamp(1rem, 2.2222222222vw, 2rem);
-  line-height: 140%;
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  cursor: pointer;
-}
-.checkbox__label::before {
-  content: "";
-  align-self: flex-start;
-  flex: 0 0 16px;
-  height: 16px;
-  background-color: var(--color-white);
-  border-radius: 2px;
-  margin-right: 0.5rem;
-  border: 1px solid var(--color-blue);
-}
-.checkbox__label::after {
-  transition: all 0.3s ease 0s;
-  position: absolute;
-  content: "";
-  width: 8px;
-  height: 8px;
-  top: 4px;
-  left: 4px;
-  background-color: var(--color-blue);
-  transform: scale(0);
-}
-.checkbox__label a {
-  color: var(--color-pink);
-  display: inline-block;
-}
-
-/*----------------------------------checkbox--------------------------------*/
+/*----------------------------------masonry--------------------------------*/
 /*----------------------------------footer--------------------------------*/
 .footer {
   padding: 1.5rem 0px;
