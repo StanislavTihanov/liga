@@ -4,16 +4,17 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 10px 30px;
+        gap: 0.8rem 2rem;
     }
     &__link {
         font-weight: 700;
-        line-height: 17px;
+        line-height: 120%;
         text-transform: uppercase;
         position: relative;
         @include fluid-text(12, 14);
+        transition: All 0.5s ease 0s;
         @include hover {
-            color: var(--color-blue);
+            color: var(--color-black);
         }
     }
     @include mobile {
@@ -23,7 +24,7 @@
         width: 100%;
         height: 100%;
         background: blueviolet;
-        padding: 100px 30px 30px 30px; 
+        padding: 8rem 2rem 2rem 2rem; 
         transition: All 0.5s ease 0s;
         overflow: auto;
         z-index: 9;
@@ -31,7 +32,7 @@
             top: 0;
         }
         &__list-item:not(:last-child){
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
         ul {
             display: block;
@@ -40,7 +41,7 @@
             color: var(--color-white);
         }
         ul li {
-            margin-bottom: 20px;
+            margin-bottom: 1.3rem;
         }
     }
 }

@@ -5,16 +5,16 @@
   }
   .tab-labels {
     background-color: #1E1F25;
-    padding: 20px 30px;
+    padding: 1.3rem 1.9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px 80px;
+    gap: 0.8rem 5rem;
     border-radius: 6px;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
   .tab-label {
-    padding: 10px 20px;
+    padding: 0.8rem 1.2rem;
     cursor: pointer;
     border: 1px solid transparent;
     transition: background-color 0.3s, border-color 0.3s;
@@ -27,13 +27,13 @@
   }
   .tab-content {
     display: none;
-    padding: 20px;
+    padding: 1.2rem;
   }
   .tab-content .easy__info {
-    flex-basis: 920px;
+    flex-basis: 80rem;
   }
   .tab-content .easy__image {
-    flex-basis: 510px;
+    flex-basis: 40rem;
   }
   #tab-1:checked ~ .content-1,
   #tab-2:checked ~ .content-2,

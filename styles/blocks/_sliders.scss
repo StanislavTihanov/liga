@@ -2,8 +2,8 @@
 .slider {
     overflow: hidden;
     position: relative;
-    padding-bottom: 66px;
-    padding: 0px 18px 60px 20px;
+    padding-bottom: 4rem;
+    padding: 0px 1.3rem 3rem 1.5rem;
 }
   /*---------------------------------------параметры чтобы слайды имели одинаковую высоту----------------------------*/
   .swiper-wrapper {
@@ -23,31 +23,31 @@
     top: 45%;
 }
   .swiper-button-next {
-    right: 10px;
+    right: 1rem;
 }
   .swiper-button-prev {
-    left: 10px;
+    left: 1rem;
 }
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    font-size: 20px;
+    font-size: 1.5rem;
     color: var(--color-white);
     border: 1px solid var(--color-white);
-    padding: 14px 18px;
-    border-radius: 15px;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
     background-color: var(--color-black);
 }
   .swiper-pagination-bullet {
     opacity: 1;
     background-color: var(--color-white);
     transition: All 0.5s ease 0s;
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     scale: 0.7;
 }
   .swiper-pagination-bullet-active {
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     scale: 1.2;
     background-color: var(--color-brown-light);
     background-color: #7B614D;

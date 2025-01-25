@@ -45,13 +45,13 @@
 
 
 //------------------------------------------------------------------------появление бекграунда у шапки при прокрутки вниз
-//window.addEventListener('scroll', () => {
-//  if(pageYOffset > 50) {
-//    document.querySelector('.header').classList.add('bg_header');
-//  } else {
-//    document.querySelector('.header').classList.remove('bg_header');
-//  }
-//});
+window.addEventListener('scroll', () => {
+  if(pageYOffset > 50) {
+    document.querySelector('.header').classList.add('header__bg');
+  } else {
+    document.querySelector('.header').classList.remove('header__bg');
+  }
+});
 //------------------------------------------------------------------------появление бекграунда у шапки при прокрутки вниз
 
 

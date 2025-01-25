@@ -105,4 +105,53 @@
     }
 }
 
+.checkbox {
+    display: inline-block;
+    &._error .checkbox__label::before{
+        border: 1px solid red;
+    }
+    &__input {
+        display: none;
+        &:checked + .checkbox__label::after {
+            transform: scale(1);
+            background-color: #c4a867
+        }
+    }
+    &__label {
+        @include fluid-text(12, 14);
+        line-height: 140%;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        span {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        &::before {
+            content: '';
+            align-self: flex-start;
+            flex: 0 0 16px;
+            height: 16px;
+            margin-right: 0.5rem;
+            border: 1px solid #c4c4c4;
+        }
+        &::after {
+            transition: all 0.3s ease 0s;
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            top: 4px;
+            left: 4px;
+            background-color: var(--color-white);
+            transform: scale(0);
+        }
+    }
+
+}
 /*----------------------------------form--------------------------------*/

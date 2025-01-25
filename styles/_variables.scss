@@ -2,18 +2,15 @@
     --color-black: #000000;
     --color-white: #FFFFFF;
     --color-gray: #F3F3F3;
-    --color-blue: #2735cd;
+    --color-blue: #59a6ef;
 
     --border: 1px solid var(--color-black);
-    --border-radius: 10px;
-    --border-radius-small: 5px;
+    --border-radius: 1rem;
+    --border-radius-small: 0.4rem;
 
     --shadow: 0px 0px 20px 0px var(--color-black);
 
     --font-family-base: 'Montserrat', Arial, sans-serif;
 
     --container-width: 91.21rem;
-    --container-padding-x: 0.6rem;
-
-    --section-padding-y: 3.13rem;
 }
