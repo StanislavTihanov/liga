@@ -151,7 +151,7 @@
       <div class="checkbox">
          <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
          <label class="checkbox__label" for="formAgreement">
-           <span>Согласие на обработку <a href="policy.html">персональных данных</a></span>
+           <span class="checkbox__text">Согласие на обработку <a href="policy.html">персональных данных</a></span>
          </label>
       </div>
    </div>
@@ -234,24 +234,36 @@
   <!------------------------------------------------------dropdown-select-->
   
   <div class="dropdown">
-    <button class="dropdown__button">Select</button>
+    <button class="dropdown__button">Select 1</button>
     <ul class="dropdown__list">
-      <li class="dropdown__list-item" data-value="travel">Заметки</li>
-      <li class="dropdown__list-item" data-value="lessons">Конспекты</li>
-      <li class="dropdown__list-item" data-value="photo">Фотоальбомы</li>
-      <li class="dropdown__list-item" data-value="sports">Дневник</li>
+      <li class="dropdown__list-item" data-value="1">Select 1</li>
+      <li class="dropdown__list-item" data-value="2">Select 2</li>
+      <li class="dropdown__list-item" data-value="3">Select 3</li>
+      <li class="dropdown__list-item" data-value="4">Select 4</li>
     </ul>
     <input type="text" name="select-category" value="" class="dropdown__input-hidden">
   </div>
   
+  <div class="select">
+    <select class="select">
+      <option class="select__option" value="1">Market</option>
+      <option class="select__option" value="2">Market 2</option>
+      <option class="select__option" value="3">Market 3</option>
+    </select>
+  </div>
+
+
   <!------------------------------------------------------dropdown-select-->
   
   <!------------------------------------------------------checkbox-->
-  <label>
-    <input class="checkbox" type="checkbox" name="coding-notes">
-    <span class="checkbox__custom"></span>
-    Чекбокс
-  </label>
+
+  <div class="checkbox">
+    <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement">
+    <label class="checkbox__label" for="formAgreement">
+      <span class="checkbox__text">Я принимаю <a class="form__link" href="policy.html">политику конфиденциальности</a></span>
+    </label>
+ </div>
+ 
   <!------------------------------------------------------checkbox-->
   
   <!------------------------------------------------------radio-buttons-->

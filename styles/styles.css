@@ -621,15 +621,6 @@ body {
   font-size: 1.5rem;
 }
 
-.select {
-  background-color: #f1d5f9;
-  color: var(--color-violet);
-  padding: 0.4rem;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-
 .file__item {
   position: relative;
 }
@@ -657,55 +648,6 @@ body {
 }
 .file__preview img {
   width: 100%;
-}
-
-.checkbox {
-  display: inline-block;
-}
-.checkbox._error .checkbox__label::before {
-  border: 1px solid red;
-}
-.checkbox__input {
-  display: none;
-}
-.checkbox__input:checked + .checkbox__label::after {
-  transform: scale(1);
-  background-color: #c4a867;
-}
-.checkbox__label {
-  font-size: clamp(0.75rem, 0.9722222222vw, 0.875rem);
-  line-height: 140%;
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  cursor: pointer;
-}
-.checkbox__label span {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-}
-.checkbox__label::before {
-  content: "";
-  align-self: flex-start;
-  flex: 0 0 16px;
-  height: 16px;
-  margin-right: 0.5rem;
-  border: 1px solid #c4c4c4;
-}
-.checkbox__label::after {
-  transition: all 0.3s ease 0s;
-  position: absolute;
-  content: "";
-  width: 8px;
-  height: 8px;
-  top: 4px;
-  left: 4px;
-  background-color: var(--color-white);
-  transform: scale(0);
 }
 
 /*----------------------------------form--------------------------------*/
@@ -755,6 +697,145 @@ body {
 }
 
 /*----------------------------------radio-buttons--------------------------------*/
+/*----------------------------------checkbox--------------------------------*/
+.checkbox {
+  display: inline-block;
+}
+.checkbox._error .checkbox__label::before {
+  border: 1px solid red;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  transform: rotate(45deg) scale(1);
+}
+.checkbox__label {
+  font-size: clamp(0.75rem, 0.9722222222vw, 0.875rem);
+  line-height: 140%;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox__label__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.checkbox__label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  background: #fff;
+  position: relative;
+}
+.checkbox__label::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border: solid violet;
+  border-width: 0 2px 2px 0;
+  top: 0;
+  left: 5px;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/*----------------------------------checkbox--------------------------------*/
+/*----------------------------------select--------------------------------*/
+.select {
+  background: var(--color-black);
+  color: #ADB3BF;
+  width: 100%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 156%;
+}
+.select__option {
+  cursor: pointer;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown__button {
+  position: relative;
+  display: block;
+  text-align: left;
+  background: #F1F1F1;
+  border-radius: 5px;
+  line-height: 120%;
+  font-size: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
+}
+.dropdown__button::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: var(--color-black);
+  pointer-events: none;
+  transform: rotate(45deg);
+}
+.dropdown__button::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 1.35rem;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: var(--color-black);
+  pointer-events: none;
+  transform: rotate(-45deg);
+}
+.dropdown__list {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: 10rem;
+  left: 0;
+  top: 3.5rem;
+  z-index: 1;
+  background: #F1F1F1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.dropdown__list--active {
+  display: block;
+}
+.dropdown__list-item {
+  border-bottom: 0;
+  cursor: pointer;
+}
+.dropdown__list-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.dropdown__list-item:hover {
+  color: #00aa4b;
+}
+.dropdown__input-hidden {
+  display: none;
+}
+
+/*----------------------------------select--------------------------------*/
 /*----------------------------------accordion--------------------------------*/
 .accordion__block {
   margin-bottom: 1.5rem;
