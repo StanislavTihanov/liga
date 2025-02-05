@@ -1,8 +1,7 @@
 /*----------------------------------footer--------------------------------*/
 .footer {
-    padding: 1.5rem 0px;
+    padding: 20px 0px;
     &__body {
-        @include content-center;
         gap: 10px;
     }
 }

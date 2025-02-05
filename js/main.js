@@ -81,7 +81,7 @@ window.addEventListener('scroll', () => {
 
 
 //------------------------------------------------------------------------Меню-Бургер
-const burgerMenu = document.querySelector('.burger__wrapper');
+const burgerMenu = document.querySelector('.burger');
 const menuBody= document.querySelector('.menu');
 
 if(burgerMenu) {

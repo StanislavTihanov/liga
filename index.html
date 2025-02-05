@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="./styles/critical.css">
-  <link rel="preload" href="./styles/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="./styles/styles.css" media="print" onload="this.onload=null;this.media='all';">
   <noscript><link rel="stylesheet" href="/styles/styles.css"></noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
@@ -52,12 +52,10 @@
             <a class="header__link" href="tel:+777777777776">+7 (777) 777 77-77</a>
             <a class="header__link" href="mailto:stas89tihanov@gmail.com">stas89tihanov@gmail.com</a>
           </div>
-          <div class="burger__wrapper" aria-label="кнопка открытия меню">
-            <div class="burger" id="hamb">
-              <span class="burger__line"></span>
-              <span class="burger__line"></span>
-              <span class="burger__line"></span>
-            </div>
+          <div class="burger" id="hamb" aria-label="кнопка открытия меню">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
           </div>
         </div>
       </div>

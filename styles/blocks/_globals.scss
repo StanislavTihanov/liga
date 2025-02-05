@@ -4,7 +4,7 @@ body.lock {
 }
 body { 
     font-family: var(--font-family-base); 
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 400; 
     color: var(--color-black); 
     background: var(--color-white);
@@ -21,10 +21,10 @@ body {
 ._container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0rem 0.6rem;
+    padding: 0rem 10px;
 }
 .section {
-    padding: 4rem 0rem;
+    padding: 50px 0px;
 }
 ._ibg {
     position: relative;

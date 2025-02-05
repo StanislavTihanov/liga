@@ -1,13 +1,13 @@
 /*----------------------------------masonry--------------------------------*/
 
 .masonry {
-    max-width: 50rem;
+    max-width: 300px;
     margin: 0 auto;
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 40rem;
+    height: 300px;
     &::before,
     &::after {
         content: '';
@@ -17,7 +17,7 @@
     }
     &__block {
         width: calc( 100% / 3 - 1rem);
-        padding: 0.5rem;
+        padding: 10px;
         &:nth-child(3n + 1) {
            order: 1;
         }
