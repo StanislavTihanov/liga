@@ -1,10 +1,9 @@
 /*----------------------------------masonry--------------------------------*/
-
 .masonry {
     max-width: 300px;
     margin: 0 auto;
     display: flex;
-    gap: 0.5rem;
+    gap: 10px;
     flex-direction: column;
     flex-wrap: wrap;
     height: 300px;
@@ -42,6 +41,4 @@
         }
     }
 }
-
-
 /*----------------------------------masonry--------------------------------*/

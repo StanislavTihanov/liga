@@ -1,5 +1,5 @@
-@mixin fluid-text($min: 14px, $max: 24px) {
-    font-size: clamp(#{$min}, #{($max - $min) / 1440 * 100}vw, #{$max});
+@mixin fluid-text($min: 14, $max: 24) {
+    font-size: clamp(#{$min}px,#{$max / 1440 * 100}vw,#{$max}px);
 }
 
 @mixin desktop {

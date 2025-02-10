@@ -8,18 +8,6 @@
     border-radius: 5px;
     margin-bottom: 16px;
     position: relative;
-    &::after {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: #4d036231 url(../images/loading.gif) center / 50px no-repeat;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease 0s;
-      }
     &._sending::after {
         opacity: 1;
         visibility: visible;
@@ -57,7 +45,7 @@
     }
     &__button {
         width: 100%;
-        padding: 1rem;
+        padding: 16px;
         background-color: var(--color-blue);
         cursor: pointer;
         color: var(--color-white);

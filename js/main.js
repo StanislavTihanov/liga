@@ -433,12 +433,23 @@ document.addEventListener ('click', (e) => {
 //  const forms = document.querySelectorAll('form'); // Получаем все формы на странице
 //
 //  forms.forEach((form) => {
-//    const phoneInput = form.querySelector('._number'); // Поле ввода телефона
-//
-//    // Добавляем маску для номера телефона
-//    if (phoneInput) {
-//      Inputmask("+7 (999) 999-99-99").mask(phoneInput);
-//    }
+//      const phoneInputs = document.querySelectorAll('._number');
+//    
+//      phoneInputs.forEach((phoneInput) => {
+//        const mask = IMask(phoneInput, { mask: '+7 (000) 000-00-00' });
+//    
+//        phoneInput.addEventListener('focus', () => {
+//          if (!phoneInput.value) {
+//            mask.value = '+7() ';
+//          }
+//        });
+//    
+//        phoneInput.addEventListener('blur', () => {
+//          if (mask.unmaskedValue.length < 2) {
+//            mask.value = '';
+//          }
+//        });
+//      });
 //
 //    form.addEventListener('submit', formSend);
 //
@@ -580,5 +591,8 @@ document.addEventListener ('click', (e) => {
 //    }
 //  });
 //});
-//
-//------------------------------------------------------------------------Обработка формы
+////------------------------------------------------------------------------Обработка форм
+
+////------------------------------------------------------------------------настройка карты
+
+////------------------------------------------------------------------------настройка карты

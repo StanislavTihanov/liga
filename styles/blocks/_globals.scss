@@ -21,7 +21,7 @@ body {
 ._container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0rem 10px;
+    padding: 0px 10px;
 }
 .section {
     padding: 50px 0px;
@@ -52,4 +52,40 @@ body {
     color: var(--color-black);
     line-height: 100%;
 }
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    @include fluid-text(20, 50);
+    font-weight: 700;
+    
+}
+.btn-outline {
+    border: 1px solid var(--color-blue);
+    background-color: var(--color-white);
+    @include hover {
+        color: var(--color-white);
+        background-color: var(--color-blue);
+    }
+    &:active {
+        background-color: #496cf8;
+    }
+}
+.btn-filled {
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    color: var(--color-white);
+    box-shadow: 0 10px 26px 0 rgba(255, 77, 98, 0.2);
+    @include hover {
+        background-color: var(--collor-white);
+    }
+    &:active {
+        background-color: #496cf8;
+    }
+}
+
 /*----------------------------------global--------------------------------*/
