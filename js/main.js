@@ -592,7 +592,169 @@ document.addEventListener ('click', (e) => {
 //  });
 //});
 ////------------------------------------------------------------------------Обработка форм
+//------------------------------------------------------------------------Quiz
 
-////------------------------------------------------------------------------настройка карты
+document.addEventListener('DOMContentLoaded', () => {
+  const quizBody = document.querySelector('.quiz__body');
+  const quizStart = document.querySelector('.quiz__start');
+  const formQuiz = document.querySelector('.quiz-form');
+  const formItems = formQuiz.querySelectorAll('fieldset');
+  const formBtnNext = formQuiz.querySelectorAll('.quiz-form__btn-next');
+  const formBtnPrev = formQuiz.querySelectorAll('.quiz-form__btn-prev');
+  const overlay = document.querySelector('.overlay');
+  const pastTestButton = document.querySelector('.pas__test-button');
 
-////------------------------------------------------------------------------настройка карты
+  const answersObj = {
+    step0: { question: '', answers: [] },
+    step1: { question: '', answers: [] },
+    step2: { question: '', answers: [] },
+    step3: { question: '', answers: [] },
+    step4: { name: "", phone: "", email: "", call: "" },
+  };
+
+  let questionNumb = 1;
+
+  // Инициализация квиза
+  quizBody.style.display = "none";
+  overlay.style.display = "none";
+
+  quizStart.addEventListener('click', () => {
+    quizBody.style.display = "block";
+    quizStart.style.display = "none";
+    questionCounter(1);
+  });
+
+  pastTestButton.addEventListener('click', () => {
+    resetQuiz();
+    overlay.style.display = "block";
+    quizBody.style.display = "block";
+  });
+
+  function questionCounter(index) {
+    const quizIndicator = document.querySelector('.quiz-indicator');
+    quizIndicator.innerHTML = `${index} / ${formItems.length}`;
+
+    const progress = document.querySelector(".quiz__progress-inner");
+    progress.style.width = `${Math.round((index / formItems.length) * 100)}%`;
+  }
+
+  function resetQuiz() {
+    formItems.forEach((formItem, index) => {
+      formItem.style.display = index === 0 ? "block" : "none";
+      const inputs = formItem.querySelectorAll("input");
+      inputs.forEach(input => {
+        input.checked = false;
+        input.parentNode.classList.remove("active-radio", "active-checkbox");
+      });
+    });
+    formBtnNext.forEach(btn => btn.disabled = true);
+    questionNumb = 1;
+    questionCounter(questionNumb);
+  }
+
+  formBtnPrev.forEach((btn, i) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      formItems[i + 1].style.display = "none";
+      formItems[i].style.display = "block";
+      questionNumb--;
+      questionCounter(questionNumb);
+    });
+  });
+
+  formBtnNext.forEach((btn, btnIndex) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      formItems[btnIndex].style.display = "none";
+      formItems[btnIndex + 1].style.display = "block";
+      questionNumb++;
+      questionCounter(questionNumb);
+    });
+    btn.disabled = true;
+  });
+
+  formItems.forEach((formItem, formItemIndex) => {
+    if (formItemIndex === 0) {
+      formItem.style.display = "block";
+    } else {
+      formItem.style.display = "none";
+    }
+
+    if (formItemIndex !== formItems.length - 1) {
+      const itemTitle = formItem.querySelector('.quiz-form__title');
+      answersObj[`step${formItemIndex}`].question = itemTitle.textContent;
+
+      formItem.addEventListener('change', (event) => {
+        const target = event.target;
+        const inputsChecked = formItem.querySelectorAll("input:checked");
+
+        answersObj[`step${formItemIndex}`].answers = Array.from(inputsChecked).map(input => input.value);
+        formBtnNext[formItemIndex].disabled = inputsChecked.length === 0;
+
+        if (target.classList.contains("quiz-form__radio")) {
+          formItem.querySelectorAll(".quiz-form__radio").forEach(input => {
+            input.parentNode.classList.toggle("active-radio", input === target);
+          });
+        } else if (target.classList.contains("quiz-form__checkbox")) {
+          target.parentNode.classList.toggle("active-checkbox");
+        }
+      });
+    }
+  });
+
+  const nameInput = document.getElementById('quiz-name');
+  const phoneInput = document.getElementById('quiz-phone');
+  const emailInput = document.getElementById('quiz-email');
+  const policyCheckbox = document.getElementById('quiz-policy');
+
+  if (!nameInput || !phoneInput || !emailInput || !policyCheckbox) {
+    console.error("Один из элементов формы не найден!");
+    return;
+  }
+
+  formQuiz.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    answersObj.step4.name = nameInput.value.trim();
+    answersObj.step4.phone = phoneInput.value.trim();
+    answersObj.step4.email = emailInput.value.trim();
+
+    if (!answersObj.step4.name || !answersObj.step4.phone || !answersObj.step4.email) {
+      alert("Пожалуйста, заполните все поля.");
+      return;
+    }
+
+    if (!policyCheckbox.checked) {
+      alert("Дайте согласие на обработку персональных данных.");
+      return;
+    }
+
+    postData(answersObj)
+      .then(res => res.json())
+      .then(res => {
+        if (res.status === "ok") {
+          overlay.style.display = "none";
+          quizBody.style.display = "none";
+          quizStart.style.display = "block";
+          formQuiz.reset();
+          alert(res.message);
+        } else if (res.status === "error") {
+          alert(res.message);
+        }
+      })
+      .catch(error => {
+        console.error("Ошибка при отправке формы:", error);
+        alert("Небходимо подключить серверную часть");
+      });
+  });
+
+  function postData(body) {
+    return fetch("./server.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+  }
+});
+
+//------------------------------------------------------------------------Quiz
