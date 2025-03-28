@@ -24,8 +24,7 @@
 <h2 id="countdown">10:00:00:00</h2>
 <!------------------------------------------------------таймер-->
 
-
-  <!------------------------------------------------------хлебные крошки-->
+<!------------------------------------------------------хлебные крошки-->
   
   <div class="breadcrumbs">
     <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -47,21 +46,21 @@
       </li>
     </ul>
   </div>
-  <!------------------------------------------------------хлебные крошки-->
+<!------------------------------------------------------хлебные крошки-->
   
-  <!------------------------------------------------------preloader-->
-    <div class="preloader" id="preloader">
-      <div class="preloader__loader">
-        <div class="preloader__loading">
-          <div class="loading">
-            <div></div>
-          </div>
+<!------------------------------------------------------preloader-->
+  <div class="preloader" id="preloader">
+    <div class="preloader__loader">
+      <div class="preloader__loading">
+        <div class="loading">
+          <div></div>
         </div>
       </div>
     </div>
-  <!------------------------------------------------------preloader-->
+  </div>
+<!------------------------------------------------------preloader-->
   
-  <!------------------------------------------------------слайдер-->
+<!------------------------------------------------------слайдер-->
   
   <div class="slider">
     <div class="swiper-wrapper">
@@ -74,9 +73,9 @@
     <div class="swiper-button-next"></div>
   </div>
   
-  <!------------------------------------------------------слайдер-->
+<!------------------------------------------------------слайдер-->
   
-  <!------------------------------------------------------сортировка по атрибутам-->
+<!------------------------------------------------------сортировка по атрибутам-->
   
   <div class="filtermenu">
     <ul class="filtermenu__list">
@@ -104,63 +103,63 @@
       </div>
     </div>
   </div>
+
+<!------------------------------------------------------сортировка по атрибутам-->
   
-  <!------------------------------------------------------сортировка по атрибутам-->
-  
-  <!------------------------------------------------------форма обратной связи-->
+<!------------------------------------------------------форма обратной связи-->
   
   <form class="form" action="send.php" method="POST" enctype="multipart/form-data" id="form">
     <div class="form__item">
-     <label class="form__label" for="formName">Имя*</label>
-     <input class="form__input _req" id="formName" type="text" name="name">
-     <span class="form__error">Заполните поле</span>
+      <label class="form__label" for="formName">Имя*</label>
+      <input class="form__input _req" id="formName" type="text" name="name">
+      <span class="form__error">Заполните поле</span>
     </div>
     <div class="form__item">
-     <label class="form__label" for="formEmail">Email*</label>
-     <input class="form__input _req _email" id="formEmail" type="text" name="email">
-     <span class="form__error">Заполните поле</span>
+      <label class="form__label" for="formEmail">Email*</label>
+      <input class="form__input _req _email" id="formEmail" type="text" name="email">
+      <span class="form__error">Заполните поле</span>
     </div>
     <div class="form__item">
-     <label class="form__label" for="formNumber">Телефон*</label>
-     <input class="form__input _req _number" id="formNumber" type="text" name="number">
-     <span class="form__error">Заполните поле</span>
+      <label class="form__label" for="formNumber">Телефон*</label>
+      <input class="form__input _req _number" id="formNumber" type="text" name="number">
+      <span class="form__error">Заполните поле</span>
     </div>
     <div class="form__item">
-     <div class="form__label">Сроки</div>
-     <select class="select" name="deadlines">
-      <option value="от 1 дня до 3 дней" selected>от 1 дня до 3 дней</option>
-      <option value="от 5 дней до 10 дней">от 5 дней до 10 дней</option>
-      <option value="от 10 дней до 30 дней">от 10 дней до 30 дней</option>
-     </select>
-   </div>
-    <div class="form__item">
-     <label class="form__label" for="formMessage">Ссылка на макет Figma</label>
-     <textarea class="form__textarea" id="formMessage" name="message"></textarea>
+      <div class="form__label">Сроки</div>
+      <select class="select" name="deadlines">
+        <option value="от 1 дня до 3 дней" selected>от 1 дня до 3 дней</option>
+        <option value="от 5 дней до 10 дней">от 5 дней до 10 дней</option>
+        <option value="от 10 дней до 30 дней">от 10 дней до 30 дней</option>
+      </select>
     </div>
     <div class="form__item">
-     <div class="form__label">Прикрепить фото макета</div>
-     <div class="file">
-        <div class="file__item">
-           <input class="file__input" id="formImage" type="file" name="image" accept=".jpg, .png, .gif">
-           <div class="file__button">Выбрать</div>
-        </div>
-        <div class="file__preview" id="formPreview"></div>
-     </div>
-   </div>
-   <div class="form__item">
-      <div class="checkbox">
-         <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
-         <label class="checkbox__label" for="formAgreement">
-           <span class="checkbox__text">Согласие на обработку <a href="policy.html">персональных данных</a></span>
-         </label>
+      <label class="form__label" for="formMessage">Ссылка на макет Figma</label>
+      <textarea class="form__textarea" id="formMessage" name="message"></textarea>
+    </div>
+    <div class="form__item">
+    <div class="form__label">Прикрепить фото макета</div>
+    <div class="file">
+      <div class="file__item">
+        <input class="file__input" id="formImage" type="file" name="image" accept=".jpg, .png, .gif">
+        <div class="file__button">Выбрать</div>
       </div>
-   </div>
-   <button class="form__button" type="submit">Отправить</button>
+      <div class="file__preview" id="formPreview"></div>
+    </div>
+  </div>
+  <div class="form__item">
+    <div class="checkbox">
+      <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
+      <label class="checkbox__label" for="formAgreement">
+        <span class="checkbox__text">Согласие на обработку <a href="policy.html">персональных данных</a></span>
+      </label>
+    </div>
+  </div>
+  <input class="form__button" value="Отправить" type="submit">
   </form>
   
-  <!------------------------------------------------------форма обратной связи-->
+<!------------------------------------------------------форма обратной связи-->
   
-  <!------------------------------------------------------popup-->
+<!------------------------------------------------------popup-->
   
   <a class="popup-link" href="#popup">Открытие popup</a>
   <div class="popup" id="popup">
@@ -213,7 +212,7 @@
                </label>
             </div>
          </div>
-         <button class="form__button" type="submit">Отправить</button>
+         <input class="form__button" value="Отправить" type="submit">
         </form>
       </div>
     </div>
@@ -229,9 +228,9 @@
     </div>
   </div>
   
-  <!------------------------------------------------------popup-->
+<!------------------------------------------------------popup-->
   
-  <!------------------------------------------------------dropdown-select-->
+<!------------------------------------------------------dropdown-select-->
   
   <div class="dropdown">
     <button class="dropdown__button">Select 1</button>
@@ -252,10 +251,9 @@
     </select>
   </div>
 
-
-  <!------------------------------------------------------dropdown-select-->
+<!------------------------------------------------------dropdown-select-->
   
-  <!------------------------------------------------------checkbox-->
+<!------------------------------------------------------checkbox-->
 
   <div class="checkbox">
     <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement">
@@ -264,9 +262,10 @@
     </label>
   </div>
  
-  <!------------------------------------------------------checkbox-->
+<!------------------------------------------------------checkbox-->
   
-  <!------------------------------------------------------radio-buttons-->
+<!------------------------------------------------------radio-buttons-->
+
   <div class="radio-buttons">
     <label class="radio-button">
       <input type="radio" name="option-1" value="1"/>
@@ -279,9 +278,10 @@
       <span class="label-text">Futures Affiliate</span>
     </label>
   </div>
-  <!------------------------------------------------------radio-buttons-->
+
+<!------------------------------------------------------radio-buttons-->
   
-  <!------------------------------------------------------Accordion-->
+<!------------------------------------------------------Accordion-->
   
   <div class="accordion">
     <div class="accordion__block">
@@ -335,10 +335,12 @@
     </div>
     </div>
   </div>
-  <!------------------------------------------------------Accordion-->
+
+<!------------------------------------------------------Accordion-->
   
   
-  <!-----------------------------------------------------Tabs-->
+<!-----------------------------------------------------Tabs-->
+
   <div class="tabs">
     <input type="radio" name="tabs" id="tab-1" checked>
     <input type="radio" name="tabs" id="tab-2">
@@ -364,9 +366,11 @@
        </div>
     </div>
   </div>
-  <!-----------------------------------------------------Tabs-->
 
-  <!-----------------------------------------------------Masonry-->
+<!-----------------------------------------------------Tabs-->
+
+<!-----------------------------------------------------Masonry-->
+
   <div class="masonry">
     <div class="masonry__block">
       1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, porro ut assumenda id odit debitis amet voluptates eum iure ducimus odio adipisci nihil cumque illum. Eum dicta quisquam enim laboriosam!
@@ -396,9 +400,11 @@
       9 Lorem ipsum dolor sit amet consectetur, Itaque, porro ut assumenda id odit debitis amet voluptates eum iure ducimus odio adipisci nihil cumque illum. Eum dicta quisquam enim laboriosam!
     </div>
   </div>
-  <!-----------------------------------------------------Masonry-->
+
+<!-----------------------------------------------------Masonry-->
 
 <!------------------------------------------------------Quiz-->
+
 <section class="quiz">
   <div class="overlay"></div>
   <div class="quiz__content _container">
@@ -524,4 +530,5 @@
     </div>
   </div>
 </section>
+
 <!------------------------------------------------------Quiz-->

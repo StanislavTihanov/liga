@@ -1,0 +1,56 @@
+/*----------------------------------stages--------------------------------*/
+.stages {
+    &__content {
+        h2 {
+            margin-bottom: 50px;
+        }
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        @include table {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include mobile {
+           display: flex;
+           flex-wrap: wrap;
+        }
+    }
+    &__block {
+        color: var(--color-white);
+        padding: 24px 30px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 190px;
+        background: radial-gradient(86.35% 132.48% at 18.33% 0%, rgb(29, 65, 132) 0%, rgb(11, 119, 255) 52.39996314048767%, rgb(89, 158, 248) 99.39996600151062%);
+        h3 {
+            font-weight: 500;
+            @include fluid-text(24, 32);
+            line-height: 110%;
+        }
+        p {
+            @include fluid-text(14, 16);
+            line-height: 150%;
+        }
+        &:nth-child(even) {
+            grid-column: 2 / 4;
+        }
+        @include mobile {
+            width: 100%;
+            min-height: 150px;
+            padding: 20px;
+        }
+    }
+    &__block--mod {
+        background: inherit;
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+/*----------------------------------stages--------------------------------*/

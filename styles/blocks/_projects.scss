@@ -1,0 +1,116 @@
+/*----------------------------------projects--------------------------------*/
+.projects {
+    &__content {
+        h2 {
+            margin-bottom: 34px;
+        }
+    }
+    &__blocks {
+       margin-bottom: 24px;
+       display: flex;
+       justify-content: space-between;
+       align-items: stretch;
+       gap: 10px;
+       @include mobile {
+        flex-wrap: wrap;
+    }
+    }
+    &__block {
+        background-color: var(--color-white);
+        padding: 20px 34px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        span {
+            font-weight: 700;
+            @include fluid-text(20, 24);
+            line-height: 167%;
+            letter-spacing: -0.06em;
+            color: var(--color-blue);
+            font-family: var(--font-family-M);
+        }
+        @include mobile {
+            padding: 20px;
+        }
+    }
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 10px;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+}
+.project {
+    position: relative;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: var(--color-white);
+    margin-bottom: 20px;
+    &>img {
+        margin-top: 66px;
+        @include mobile {
+            margin-bottom: 20px;
+        }
+    }
+    &__logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        @include mobile {
+            top: 20px;
+            left: 20px;
+            width: 50px;
+        }
+    }
+    &__video {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        img {
+            border-radius: 10px;
+            @include mobile {
+                width: 100%;
+            }
+        }
+        &_play {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 56px;
+        }
+        @include mobile {
+            position: relative;
+            margin-bottom: 20px;
+            top: 0px;
+            right: 0px;
+        }
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 4px;
+        p {
+            background-color: #E0EDFD;
+            padding: 10px 5px;
+            border-radius: 9px;
+            text-align: center;
+            width: 100%;
+            font-weight: 500;
+            @include fluid-text(12, 14);
+            line-height: 143%;
+            color: var(--color-blue);
+        }
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+/*----------------------------------projects--------------------------------*/

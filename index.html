@@ -5,129 +5,586 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="эталон">
-  <meta name="keywords" content="эталон">
-  <meta property="og:title" content="эталон">
+  <meta name="description" content="Liga">
+  <meta name="keywords" content="Liga">
+  <meta property="og:title" content="Liga">
   <meta property="og:url" content="ссылка на сайт">
   <meta property="og:image:width" content="1000">
   <meta property="og:image:height" content="500">
-  <meta property="og:description" content="эталон">
+  <meta property="og:description" content="Liga">
   <meta property="og:image" content="путь к картинке/image.webp">
-  <title>Эталон</title>
+  <title>Liga</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body id="body">
   <div class="wrapper">
-    <header class="header lock-padding">
-      <div class="header__content">
-        <div class="header__body">
-          <a class="header__logo" href="index.html" aria-label="логотип">
-            <img src="images/logo.svg" alt="logo">
-          </a>
-          <nav class="menu" id="menu">
-            <ul>
-              <li>
-                <a class="menu__link" data-goto=".reviews" href="#">Главная</a>
-              </li>
-              <li>
-                <a class="menu__link" data-goto=".rates" href="#">О нас</a>
-              </li>
-              <li>
-                <a class="menu__link" data-goto=".about" href="#">Каталог</a>
-              </li>
-              <li>
-                <a class="menu__link" data-goto=".locations" href="#">Контакты</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="header__links">
-            <a class="header__link" href="tel:+777777777776">+7 (777) 777 77-77</a>
-            <a class="header__link" href="mailto:stas89tihanov@gmail.com">stas89tihanov@gmail.com</a>
+    <main class="main">
+      <section class="main-section">
+        <div class="main-section__content _container">
+          <div class="main-section__body">
+            <h1>От идеи до комплексной автоматизации производств</h1>
+            <p>
+              Сокращайте затраты на ФОТ <br>
+              и увеличивайте производительность от 30%
+            </p>
+            <div class="main-section__form">
+              <form class="form">
+                <div class="form__inner">
+                  <label class="form__label">
+                    <span>Введите телефон</span>
+                    <input class="form__label_input _number" type="text">
+                  </label>
+                  <label class="form__label">
+                    <span>Введите имя</span>
+                    <input class="form__label_input" type="text" placeholder="Иван">
+                  </label>
+                  <input class="form__button" type="submit" value="Получить консультацию">
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="formAgreement">
+                    <span class="checkbox__text">Нажимая на кнопку «Получить консультацию» вы даете согласие на обработку <a class="form__link" href="#!">персональных данных</a></span>
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="main-section__blocks">
+              <div class="main-section__block">
+                <span>10 лет</span>
+                <p>экспертизы в мебельной отрасли</p>
+              </div>
+              <div class="main-section__block">
+                <span>50+</span>
+                <p>проектов реализовано за 5 лет</p>
+              </div>
+              <div class="main-section__block">
+                <span>45%</span>
+                <p>средний процент сокращения штата сотрудников</p>
+              </div>
+              <div class="main-section__block">
+                <span>от 30%</span>
+                <p>рост производительности после внедрения автоматизации</p>
+              </div>
+              <div class="main-section__block">
+                <span>10</span>
+                <p>специалистов в команде</p>
+              </div>
+            </div>
           </div>
-          <div class="burger" id="hamb" aria-label="кнопка открытия меню">
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
+          <div class="main-section__bg _ibg">
+            <img src="images/main-section-bg.webp" alt="image bg">
           </div>
         </div>
-      </div>
-    </header>
+      </section>
 
-    <main class="main">
-      <section class="main-section section">
-        <div class="main-section__content _container">
-          <div class="title">
-            <h1>Эталон2.0</h1>
+      <section class="info">
+        <div class="info__content _container">
+          <div class="section-top">
+             <h2>Выведем ваше производство на новый уровень эффективности</h2>
+             <p>Департамент инжиниринга LIGA разрабатывает комплексные решения для мебельных, дверных и 
+              деревообрабатывающих производств. Организует как отдельные участки, так и производства под ключ.</p>
           </div>
-          <picture>
-            <source media="(max-width: 390px)" srcset="images/test.webp">
-            <source media="(max-width: 768px)" srcset="images/test.webp">
-            <source media="(min-width: 1920px)" srcset="images/test.webp">
-            <img src="images/test.webp" alt="image">
-          </picture>
+          <div class="info__team">
+            <h3>Команда экспертов департамента инжиниринга и комплексных решений</h3>
+            <div class="team-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image1.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Скурихин Евгений</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image2.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Першин Евгений</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image3.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Еременчуков Дмитрий</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image4.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Худяков Елизар</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image1.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Скурихин Евгений</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image2.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Першин Евгений</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image3.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Еременчуков Дмитрий</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <img src="images/card-image4.webp" alt="photo">
+                    <div class="card__info">
+                      <h4>Худяков Елизар</h4>
+                      <p>Ведущий менеджер проектных продаж</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider__buttons">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <a class="info__video" href="images/Premiere.mp4" data-fancybox="gallery-video">
+            <img src="images/info-img.webp" alt="image">
+            <div class="info__video_play">
+              <img src="images/play.svg" alt="play">
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="start section-color">
+        <div class="start__content _container">
+          <div class="section-top">
+            <h2>С чего начинается инжиниринг</h2>
+            <div class="section-top__inner">
+              <p>
+                Инжиниринг начинается с аудита. Именно он определяет реальное состояние производства, 
+                выявляя узкие места и скрытые резервы, 
+                и помогает принять верные решения, обеспечив быструю окупаемость инвестиций.
+              </p>
+              <p>
+                Многие проблемы — лишь вершина айсберга, их истинные причины скрыты в глубине производственных процессов.
+              </p>
+            </div>
+          </div>
+          <h3>Ключевые этапы проведения технического аудита</h3>
+          <div class="start__body">
+            <div class="start__stages">
+              <div class="start__stage">
+                <p>Определить цели и задачи</p>
+              </div>
+              <div class="start__stage">
+                <p>Сбор аналитических данных о работе предприятия</p>
+              </div>
+              <div class="start__stage">
+                <p>Оценка и интервьюирование персонала</p>
+              </div>
+              <div class="start__stage">
+                <p>Визуальное наблюдение и выявление узких мест</p>
+              </div>
+              <div class="start__stage">
+                <p>Анализ данных</p>
+              </div>
+              <div class="start__stage">
+                <p>Подготовка аналитических отчетов  с выводами рекомендациями</p>
+              </div>
+              <div class="start__stage">
+                <p>Разработка и проектирование готовых решений</p>
+              </div>
+            </div>
+            <div class="start__image">
+              <img src="images/laptop.webp" alt="img">
+              <a class="button button-filled" href="#!">Узнать стоимость аудита</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects">
+        <div class="projects__content _container">
+          <h2>Реализованные проекты в России и китае</h2>
+          <div class="projects__body">
+            <div class="project-slider__wrap">
+              <div class="project-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="project">
+                      <div class="project__logo">
+                         <img src="images/project-logo.svg" alt="logo">
+                      </div>
+                      <img src="images/project-img.webp" alt="img">
+                      <a class="project__video" href="images/Premiere.mp4" data-fancybox="gallery-video">
+                        <img src="images/project-video-img.webp" alt="image">
+                        <div class="project__video_play">
+                         <img src="images/play.svg" alt="play">
+                        </div>
+                      </a>
+                      <div class="project__info">
+                        <p>Склад</p>
+                        <p>Участок раскроя</p>
+                        <p>Участок кромкооблицовки</p>
+                        <p>Участок присадки</p>
+                        <p>Участок сортировки</p>
+                        <p>Участок упаковки</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="project">
+                      <div class="project__logo">
+                         <img src="images/project-logo.svg" alt="logo">
+                      </div>
+                      <img src="images/project-img.webp" alt="img">
+                      <a class="project__video" href="images/Premiere.mp4" data-fancybox="gallery-video">
+                        <img src="images/project-video-img.webp" alt="image">
+                        <div class="project__video_play">
+                         <img src="images/play.svg" alt="play">
+                        </div>
+                      </a>
+                      <div class="project__info">
+                        <p>Склад</p>
+                        <p>Участок раскроя</p>
+                        <p>Участок кромкооблицовки</p>
+                        <p>Участок присадки</p>
+                        <p>Участок сортировки</p>
+                        <p>Участок упаковки</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="project">
+                      <div class="project__logo">
+                         <img src="images/project-logo.svg" alt="logo">
+                      </div>
+                      <img src="images/project-img.webp" alt="img">
+                      <a class="project__video" href="images/Premiere.mp4" data-fancybox="gallery-video">
+                        <img src="images/project-video-img.webp" alt="image">
+                        <div class="project__video_play">
+                         <img src="images/play.svg" alt="play">
+                        </div>
+                      </a>
+                      <div class="project__info">
+                        <p>Склад</p>
+                        <p>Участок раскроя</p>
+                        <p>Участок кромкооблицовки</p>
+                        <p>Участок присадки</p>
+                        <p>Участок сортировки</p>
+                        <p>Участок упаковки</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-slider__buttons">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+            <div class="projects__blocks">
+              <div class="projects__block">
+                <span>10 000</span>
+                <p>деталей за 10 часов</p>
+              </div>
+              <div class="projects__block">
+                <span>5</span>
+                <p>операторов автоматизированная линия</p>
+              </div>
+              <div class="projects__block">
+                <span>18</span>
+                <p>операторов механизированная линия</p>
+              </div>
+            </div>
+            <div class="projects__buttons">
+              <a class="button button-filled" href="#!">Посетить фабрику</a>
+              <a class="button button-outline" href="#!">Узнать больше о проектах</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cases">
+        <div class="cases__content _container">
+          <h2>Кейсы</h2>
+          <div class="cases__body">
+            <div class="case">
+              <span>Кейс 1</span>
+              <h3>Низкая производительность раскроя</h3>
+              <div class="case__blocks">
+                <div class="case__block">
+                  <div class="case__block_top">
+                    <p>Точка</p>
+                    <span>A</span>
+                  </div>
+                  <p>
+                    Клиенты начали массово возвращать детали с дефектами. 
+                    Завод предпринял меры по усилению упаковки, но это не привело к улучшению ситуации
+                  </p>
+                </div>
+                <div class="case__block">
+                  <div class="case__block_top">
+                    <p>Точка</p>
+                    <span>Б</span>
+                  </div>
+                  <p>
+                    Проведенный аудит выявил проблемы: хаотичное перемещение деталей по цеху, 
+                    неорганизованная логистика и отсутствие контроля
+                    на этапе упаковки
+                  </p>
+                </div>
+                <div class="case__block">
+                  <div class="case__block_top">
+                    <p>Решение</p>
+                  </div>
+                  <p>
+                    Была пересмотрена схема движения деталей, внедрена механизация
+                    и установлен контроль качества перед упаковкой
+                  </p>
+                </div>
+                <div class="case__block">
+                  <div class="case__block_top case__block_top--mod">
+                    <p>Итог</p>
+                  </div>
+                  <p>
+                    Количество бракованных деталей сократилось на 95%, а общая производительность цеха 
+                    повысилась без существенных финансовых затрат
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="case">
+              <span>Кейс 2</span>
+              <h3>Высокий процент брака</h3>
+              <div class="case__blocks">
+                <div class="case__block">
+                  <div class="case__block_top">
+                    <p>Точка</p>
+                    <span>A</span>
+                  </div>
+                  <p>
+                    Клиенты начали массово возвращать детали с дефектами. 
+                    Завод предпринял меры по усилению упаковки, но это не привело к улучшению ситуации
+                  </p>
+                </div>
+                <div class="case__block">
+                  <div class="case__block_top">
+                    <p>Точка</p>
+                    <span>Б</span>
+                  </div>
+                  <p>
+                    Проведенный аудит выявил проблемы: хаотичное перемещение деталей по цеху, 
+                    неорганизованная логистика и отсутствие контроля
+                    на этапе упаковки
+                  </p>
+                </div>
+                <div class="case__block">
+                  <div class="case__block_top">
+                    <p>Решение</p>
+                  </div>
+                  <p>
+                    Была пересмотрена схема движения деталей, внедрена механизация
+                    и установлен контроль качества перед упаковкой
+                  </p>
+                </div>
+                <div class="case__block">
+                  <div class="case__block_top case__block_top--mod">
+                    <p>Итог</p>
+                  </div>
+                  <p>
+                    Количество бракованных деталей сократилось на 95%, а общая производительность цеха 
+                    повысилась без существенных финансовых затрат
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="result section-color">
+        <div class="result__content _container">
+          <h2>Что вы получите после реализации проекта</h2>
+          <div class="result__items">
+            <div class="result__item">
+              <img src="images/result-image1.webp" alt="img">
+              <p>Увеличение производительности</p>
+            </div>
+            <div class="result__item">
+              <img src="images/result-image2.webp" alt="img">
+              <p>Оптимизация производственной площади</p>
+            </div>
+            <div class="result__item">
+              <img src="images/result-image3.webp" alt="img">
+              <p>Снижение влияния человеческого фактора <br> и минимизация брака</p>
+            </div>
+            <div class="result__item">
+              <img src="images/result-image4.webp" alt="img">
+              <p>Снижение количества персонала, текучки кадров и затрат на ФОТ</p>
+            </div>
+            <div class="result__item">
+              <img src="images/result-image5.webp" alt="img">
+              <p>Снижение себестоимости продукции</p>
+            </div>
+            <div class="result__info">
+              <p>Узнайте ваши выгоды <br> от аудита</p>
+              <a class="button button-white" href="#!">Заказать звонок</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stages">
+        <div class="stages__content _container">
+          <h2>Порядок работы</h2>
+          <div class="stages__body">
+            <div class="stages__block">
+              <h3>Бесплатная консультация</h3>
+              <p>Обсуждаем ваши цели и задачи…</p>
+            </div>
+            <div class="stages__block stages__block--mod"></div>
+            <div class="stages__block">
+              <h3>Заключение договора</h3>
+              <p>Заключаем договор, в котором прописаны все условия, сроки и стоимость аудита.</p>
+            </div>
+            <div class="stages__block">
+              <h3>Проведение аудита с разработкой готового проекта</h3>
+              <p>Выявляем слабые места и точки роста. Проектируем комплексное решение. 
+                По результатам аудита предлагаем наиболее эффективный вариант производства.</p>
+            </div>
+            <div class="stages__block stages__block--mod"></div>
+            <div class="stages__block">
+              <h3>Заказ оборудования</h3>
+              <p>Обсуждаем ваши цели и задачи…</p>
+            </div>
+            <div class="stages__block">
+              <h3>Поддержка и сопровождение</h3>
+            </div>
+            <div class="stages__block">
+              <h3>Реализация проекта</h3>
+              <p>Станки, наладка, ПО, обучение кадров и тп</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="reviews__content _container">
+          <h2>Видеоотзывы и обзор готовых решений</h2>
+          <div class="reviews__body">
+            <div class="reviews-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="reviews__block" href="images/Premiere.mp4" data-fancybox="reviews-video">
+                    <img src="images/reviews-image1.webp" alt="img">
+                    <div class="reviews__block_info">
+                      <img src="images/play-blue.svg" alt="play">
+                      <p>Мебельный подкаст <br> Фабрика Мирлачева</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="reviews__block" href="images/Premiere.mp4" data-fancybox="reviews-video">
+                    <img src="images/reviews-image2.webp" alt="img">
+                    <div class="reviews__block_info">
+                      <img src="images/play-blue.svg" alt="play">
+                      <p>Полная <br> автоматизация</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="reviews__block" href="images/Premiere.mp4" data-fancybox="reviews-video">
+                    <img src="images/reviews-image3.webp" alt="img">
+                    <div class="reviews__block_info">
+                      <img src="images/play-blue.svg" alt="play">
+                      <p>Автоматизированная линия <br> для упаковки мебели</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="reviews__block" href="images/Premiere.mp4" data-fancybox="reviews-video">
+                    <img src="images/reviews-image1.webp" alt="img">
+                    <div class="reviews__block_info">
+                      <img src="images/play-blue.svg" alt="play">
+                      <p>Мебельный подкаст <br> Фабрика Мирлачева</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="reviews__block" href="images/Premiere.mp4" data-fancybox="reviews-video">
+                    <img src="images/reviews-image2.webp" alt="img">
+                    <div class="reviews__block_info">
+                      <img src="images/play-blue.svg" alt="play">
+                      <p>Полная <br> автоматизация</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="reviews__block" href="images/Premiere.mp4" data-fancybox="reviews-video">
+                    <img src="images/reviews-image3.webp" alt="img">
+                    <div class="reviews__block_info">
+                      <img src="images/play-blue.svg" alt="play">
+                      <p>Автоматизированная линия <br> для упаковки мебели</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="reviews__buttons">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="partners__content">
+          <h2 class="_container">Нам доверяют</h2>
+          <div class="partners__block">
+            <div class="partners__logo">
+              <img src="images/partners-logo1.svg" alt="logo">
+            </div>
+            <div class="partners__logo">
+              <img src="images/partners-logo2.svg" alt="logo">
+            </div>
+          </div>
         </div>
       </section>
 
     </main>
-
-    <footer class="footer">
-      <div class="footer__content _container">
-          <a class="footer__logo" href="index.html">
-            <img src="images/logo.svg" alt="logo">
-          </a>
-        <div class="footer__body">
-          <div class="footer__box">
-            <h3 class="footer__title">Навигация</h3>
-            <nav class="footer__nav">
-              <ul>
-                <li>
-                  <a href="#">О нас</a>
-                </li>
-                <li>
-                  <a href="#">Тарифы</a>
-                </li>
-                <li>
-                  <a href="#">Локации</a>
-                </li>
-                <li>
-                  <a href="#">Отзывы</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__box">
-            <h3 class="footer__title">Навигация</h3>
-            <nav class="footer__nav">
-              <ul>
-                <li>
-                  <a href="#">О нас</a>
-                </li>
-                <li>
-                  <a href="#">Тарифы</a>
-                </li>
-                <li>
-                  <a href="#">Локации</a>
-                </li>
-                <li>
-                  <a href="#">Отзывы</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          
-        </div>
-      </div>
-    </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script src="https://unpkg.com/imask"></script>
   <script src="js/main.js"></script>  
 </body>

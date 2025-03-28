@@ -1,16 +1,38 @@
 /*----------------------------------Шрифты--------------------------------*/
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.woff2') format(woff2);
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format(woff2);
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Bold.woff2') format(woff2);
-    font-weight: 700;
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.woff2') format(woff2);
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-SemiBold.woff2') format(woff2);
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-ExtraBold.woff2') format(woff2);
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Micra';
+    src: url('../fonts/Micra-bold.woff2') format(woff2);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /*----------------------------------Шрифты--------------------------------*/

@@ -1,0 +1,41 @@
+/*----------------------------------info--------------------------------*/
+.info {
+    &__team {
+        margin-bottom: 50px;
+        position: relative;
+       h3 {
+           font-weight: 600;
+           @include fluid-text(20, 24);
+           line-height: 117%;
+           margin-bottom: 24px;
+       }
+    }
+    &__video {
+        position: relative;
+        img {
+            border-radius: 24px;
+            @include mobile {
+                border-radius: 16px;
+            }
+        }
+        &_play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s;
+            @include mobile {
+                width: 60px;
+            }
+        }
+        @include hover {
+            .info__video_play {
+                transform: translate(-50%, -50%) scale(1.1);
+                transition: all 0.3s;
+            }
+        }
+    }
+}
+
+
+/*----------------------------------info--------------------------------*/

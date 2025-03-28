@@ -1,0 +1,77 @@
+/*----------------------------------cases --------------------------------*/
+.cases {
+    &__content {
+        h2 {
+            margin-bottom: 34px;
+        }
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 10px;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+}
+.case {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 24px;
+    &>span {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 233%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase; 
+    }
+    h3 {
+        font-weight: 600;
+        @include fluid-text(20, 24);
+        line-height: 117%;
+        margin-bottom: 24px;
+    }
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+    &__block {
+        &_top {
+            background: #F1F7FB;
+            padding: 8px 10px 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            border-radius: 9px;
+            margin-bottom: 14px;
+            span {
+                border-radius: 12px;
+                padding: 4px 13px;
+                color: var(--color-white);
+                background: radial-gradient(86.35% 132.48% at 18.33% 0%, rgb(29, 65, 132) 0%, rgb(11, 119, 255) 52.39996314048767%, rgb(169, 206, 255) 99.39996600151062%);
+            }
+        }
+        &_top--mod {
+            background: var(--color-blue);
+            color: var(--color-white);
+        }
+        &:first-child,
+        &:nth-child(2) {
+            width: 48%;
+            @include table {
+                width: 47%;
+            }
+        }
+    }
+    @include mobile {
+        padding: 10px;
+    }
+}
+
+
+/*----------------------------------cases --------------------------------*/

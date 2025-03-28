@@ -1,6 +1,84 @@
 /*----------------------------------main-section--------------------------------*/
 .main-section {
-    margin-top: 150px;
+    position: relative;
+    &__body {
+        position: relative;
+        z-index: 2;
+        color: var(--color-white);
+        padding: 10px 0px;
+        h1 {
+            font-weight: 700;
+            @include fluid-text(22, 48);
+            line-height: 117%;
+            letter-spacing: -0.07em;
+            margin-bottom: 16px;
+            font-family: var(--font-family-M);
+        }
+        p {
+            font-weight: 500;
+            @include fluid-text(18, 24);
+            line-height: 125%;
+            margin-bottom: 80px;
+            @include mobile {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    &__form {
+        margin-bottom: 80px;
+        @include mobile {
+            margin-bottom: 40px;
+        }
+    }
+    &__blocks {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 8px;
+        @include mobile {
+            
+        }
+    }
+    &__block {
+        box-shadow: 0 4px 8px 0 rgba(28, 72, 152, 0.36);
+        background: var(--color-white);
+        padding: 24px;
+        border-radius: 16px;
+        color: var(--color-text);
+        span {
+            font-family: var(--font-family-M);
+            font-weight: 700;
+            @include fluid-text(28, 32);
+            line-height: 125%;
+            letter-spacing: -0.09em;
+            color: var(--color-blue);
+            margin-bottom: 10px;
+            display: block
+        }
+        p {
+            @include fluid-text(14, 15);
+            line-height: 133%;
+            margin-bottom: 0px;
+        }
+        @include mobile {
+            padding: 15px;
+        }
+    }
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        img {
+            border-bottom-right-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+            @include mobile {
+                border-bottom-right-radius: 16px;
+                border-bottom-left-radius: 16px;
+            }
+        }
+    }
 }
+
 
 /*----------------------------------main-section--------------------------------*/

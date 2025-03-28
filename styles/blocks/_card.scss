@@ -1,6 +1,28 @@
 /*----------------------------------card--------------------------------*/
 .card {
     height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px 24px;
+    padding: 30px 34px;
+    background-color: var(--collor-white);
+    box-shadow: 0 4px 8px 0 #e1e8ec;
+    border-radius: 16px;
+    h4 {
+      font-weight: 600;
+      @include fluid-text(18, 20);
+      line-height: 140%;
+      letter-spacing: -0.02em;
+      color: var(--collor-black);
+      margin-bottom: 5px;
+    }
+    p {
+      color: #7189A7;
+    }
+    @include mobile {
+      padding: 10px 15px;
+      pad: 10px;
+    }
   }
 
 /*----------------------------------card--------------------------------*/

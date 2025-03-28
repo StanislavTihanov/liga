@@ -1,14 +1,15 @@
 /*----------------------------------Переменные--------------------------------*/
 :root {
-    --color-black: #000000;
+    --color-black: #000;
+    --color-text: #0C0F44;
     --color-white: #FFFFFF;
-    --color-gray: #F3F3F3;
-    --color-blue: #59a6ef;
+    --color-gray: #889FBD;
+    --color-blue: #0B77FF;
     --border: 1px solid var(--color-black);
-    --border-radius: 16px;
-    --border-radius-small: 10px;
+    --border-radius: 50px;
     --shadow: 0px 0px 20px 0px var(--color-black);
-    --font-family-base: 'Montserrat', Arial, sans-serif;
-    --container-width: 1440px;
+    --font-family-base: 'Roboto', Arial, sans-serif;
+    --font-family-M: 'Micra', Arial, sans-serif;
+    --container-width: 1300px;
 }
 /*----------------------------------Переменные--------------------------------*/

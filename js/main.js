@@ -44,17 +44,6 @@
 //------------------------------------------------------------------------таймер обратного отсчета
 
 
-//------------------------------------------------------------------------появление бекграунда у шапки при прокрутки вниз
-window.addEventListener('scroll', () => {
-  if(pageYOffset > 50) {
-    document.querySelector('.header').classList.add('header__bg');
-  } else {
-    document.querySelector('.header').classList.remove('header__bg');
-  }
-});
-//------------------------------------------------------------------------появление бекграунда у шапки при прокрутки вниз
-
-
 //------------------------------------------------------------------------search
 //const searchButtons = document.querySelectorAll('.search__btn');
 //const searchWindows = document.querySelectorAll('.search__window');
@@ -76,28 +65,6 @@ window.addEventListener('scroll', () => {
 
 //------------------------------------------------------------------------search
 
-
-
-
-
-//------------------------------------------------------------------------Меню-Бургер
-const burgerMenu = document.querySelector('.burger');
-const menuBody= document.querySelector('.menu');
-
-if(burgerMenu) {
-    burgerMenu.addEventListener("click", function (e) {
-      burgerMenu.classList.toggle('_active');
-      menuBody.classList.toggle('_active');
-    });
-}
-//------------------------------------------------------------------------закрытие меню при клике вне его
-document.addEventListener ('click', (e) => {
-  if (!burgerMenu.contains(e.target)) {
-    menuBody.classList.remove('_active');
-    burgerMenu.classList.remove('_active');
-  }
-})
-//------------------------------------------------------------------------закрытие меню при клике вне его
 
 
 //------------------------------------------------------------------------Прокрутка при клике
@@ -133,37 +100,87 @@ document.addEventListener ('click', (e) => {
 //------------------------------------------------------------------------Прокрутка при клике
 
 //------------------------------------------------------------------------Слайдер
-//const mainSlider = document.querySelector('.main-slider');
-//if (mainSlider) {
-//  new Swiper(mainSlider, {
-//    direction: 'horizontal',
-//    loop: true,
-//    slidesPerView: 3,
-//    spaceBetween: 20,
-//    speed: 1000,
-//    autoHeight: false,
-//    navigation: {
-//      nextEl: '.swiper-button-next',
-//      prevEl: '.swiper-button-prev',
-//    },
-//    pagination: {
-//      el: '.swiper-pagination',
-//      clickable: true,
-//    },
-//    breakpoints: {
-//      320: {
-//        slidesPerView: 1,
-//      },
-//      640: {
-//        slidesPerView: 2,
-//      },
-//      980: {
-//        slidesPerView: 3,
-//      }
-//    }
-//  });
-//}
+const teamSlider = document.querySelector('.team-slider');
+if (teamSlider) {
+  new Swiper(teamSlider, {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    speed: 1000,
+    autoHeight: false,
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 2,
+      },
+      980: {
+        slidesPerView: 3,
+      }
+    }
+  });
+}
+const projectSlider = document.querySelector('.project-slider');
+if (projectSlider) {
+  new Swiper(projectSlider, {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 1000,
+    autoHeight: false,
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
+const reviewsSlider = document.querySelector('.reviews-slider');
+if (reviewsSlider) {
+  new Swiper(reviewsSlider, {
+    direction: 'horizontal',
+    loop: true,
+    spaceBetween: 20,
+    speed: 1000,
+    autoHeight: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.1,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 2,
+      },
+      980: {
+        slidesPerView: 3,
+      }
+    }
+  });
+}
 //------------------------------------------------------------------------Слайдер
+
+//------------------------------------------------------------------------Fancybox
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof Fancybox !== "undefined" && typeof Fancybox.bind === "function") {
+      Fancybox.bind("[data-fancybox]", {
+          // Кастомные опции
+      });
+  }
+});
+//------------------------------------------------------------------------Fancybox
 
 
 //-----------------------------------------------------------------------сортировка по атрибутам
@@ -428,6 +445,13 @@ document.addEventListener ('click', (e) => {
 //}
 //------------------------------------------------------------------------Animation
 
+const phoneInputs = document.querySelectorAll('._number');
+phoneInputs.forEach((phoneInput) => {
+  const mask = IMask(phoneInput, { mask: '+7 (900) 000-00-00' });
+  if (!phoneInput.value) mask.value = '+7 () ';
+  phoneInput.addEventListener('focus', () => !phoneInput.value && (mask.value = '+7 () '));
+});
+
 //------------------------------------------------------------------------Обработка формы
 //document.addEventListener('DOMContentLoaded', function () {
 //  const forms = document.querySelectorAll('form'); // Получаем все формы на странице
@@ -594,167 +618,167 @@ document.addEventListener ('click', (e) => {
 ////------------------------------------------------------------------------Обработка форм
 //------------------------------------------------------------------------Quiz
 
-document.addEventListener('DOMContentLoaded', () => {
-  const quizBody = document.querySelector('.quiz__body');
-  const quizStart = document.querySelector('.quiz__start');
-  const formQuiz = document.querySelector('.quiz-form');
-  const formItems = formQuiz.querySelectorAll('fieldset');
-  const formBtnNext = formQuiz.querySelectorAll('.quiz-form__btn-next');
-  const formBtnPrev = formQuiz.querySelectorAll('.quiz-form__btn-prev');
-  const overlay = document.querySelector('.overlay');
-  const pastTestButton = document.querySelector('.pas__test-button');
-
-  const answersObj = {
-    step0: { question: '', answers: [] },
-    step1: { question: '', answers: [] },
-    step2: { question: '', answers: [] },
-    step3: { question: '', answers: [] },
-    step4: { name: "", phone: "", email: "", call: "" },
-  };
-
-  let questionNumb = 1;
-
-  // Инициализация квиза
-  quizBody.style.display = "none";
-  overlay.style.display = "none";
-
-  quizStart.addEventListener('click', () => {
-    quizBody.style.display = "block";
-    quizStart.style.display = "none";
-    questionCounter(1);
-  });
-
-  pastTestButton.addEventListener('click', () => {
-    resetQuiz();
-    overlay.style.display = "block";
-    quizBody.style.display = "block";
-  });
-
-  function questionCounter(index) {
-    const quizIndicator = document.querySelector('.quiz-indicator');
-    quizIndicator.innerHTML = `${index} / ${formItems.length}`;
-
-    const progress = document.querySelector(".quiz__progress-inner");
-    progress.style.width = `${Math.round((index / formItems.length) * 100)}%`;
-  }
-
-  function resetQuiz() {
-    formItems.forEach((formItem, index) => {
-      formItem.style.display = index === 0 ? "block" : "none";
-      const inputs = formItem.querySelectorAll("input");
-      inputs.forEach(input => {
-        input.checked = false;
-        input.parentNode.classList.remove("active-radio", "active-checkbox");
-      });
-    });
-    formBtnNext.forEach(btn => btn.disabled = true);
-    questionNumb = 1;
-    questionCounter(questionNumb);
-  }
-
-  formBtnPrev.forEach((btn, i) => {
-    btn.addEventListener('click', (event) => {
-      event.preventDefault();
-      formItems[i + 1].style.display = "none";
-      formItems[i].style.display = "block";
-      questionNumb--;
-      questionCounter(questionNumb);
-    });
-  });
-
-  formBtnNext.forEach((btn, btnIndex) => {
-    btn.addEventListener('click', (event) => {
-      event.preventDefault();
-      formItems[btnIndex].style.display = "none";
-      formItems[btnIndex + 1].style.display = "block";
-      questionNumb++;
-      questionCounter(questionNumb);
-    });
-    btn.disabled = true;
-  });
-
-  formItems.forEach((formItem, formItemIndex) => {
-    if (formItemIndex === 0) {
-      formItem.style.display = "block";
-    } else {
-      formItem.style.display = "none";
-    }
-
-    if (formItemIndex !== formItems.length - 1) {
-      const itemTitle = formItem.querySelector('.quiz-form__title');
-      answersObj[`step${formItemIndex}`].question = itemTitle.textContent;
-
-      formItem.addEventListener('change', (event) => {
-        const target = event.target;
-        const inputsChecked = formItem.querySelectorAll("input:checked");
-
-        answersObj[`step${formItemIndex}`].answers = Array.from(inputsChecked).map(input => input.value);
-        formBtnNext[formItemIndex].disabled = inputsChecked.length === 0;
-
-        if (target.classList.contains("quiz-form__radio")) {
-          formItem.querySelectorAll(".quiz-form__radio").forEach(input => {
-            input.parentNode.classList.toggle("active-radio", input === target);
-          });
-        } else if (target.classList.contains("quiz-form__checkbox")) {
-          target.parentNode.classList.toggle("active-checkbox");
-        }
-      });
-    }
-  });
-
-  const nameInput = document.getElementById('quiz-name');
-  const phoneInput = document.getElementById('quiz-phone');
-  const emailInput = document.getElementById('quiz-email');
-  const policyCheckbox = document.getElementById('quiz-policy');
-
-  if (!nameInput || !phoneInput || !emailInput || !policyCheckbox) {
-    console.error("Один из элементов формы не найден!");
-    return;
-  }
-
-  formQuiz.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    answersObj.step4.name = nameInput.value.trim();
-    answersObj.step4.phone = phoneInput.value.trim();
-    answersObj.step4.email = emailInput.value.trim();
-
-    if (!answersObj.step4.name || !answersObj.step4.phone || !answersObj.step4.email) {
-      alert("Пожалуйста, заполните все поля.");
-      return;
-    }
-
-    if (!policyCheckbox.checked) {
-      alert("Дайте согласие на обработку персональных данных.");
-      return;
-    }
-
-    postData(answersObj)
-      .then(res => res.json())
-      .then(res => {
-        if (res.status === "ok") {
-          overlay.style.display = "none";
-          quizBody.style.display = "none";
-          quizStart.style.display = "block";
-          formQuiz.reset();
-          alert(res.message);
-        } else if (res.status === "error") {
-          alert(res.message);
-        }
-      })
-      .catch(error => {
-        console.error("Ошибка при отправке формы:", error);
-        alert("Небходимо подключить серверную часть");
-      });
-  });
-
-  function postData(body) {
-    return fetch("./server.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-  }
-});
-
-//------------------------------------------------------------------------Quiz
+//document.addEventListener('DOMContentLoaded', () => {
+//  const quizBody = document.querySelector('.quiz__body');
+//  const quizStart = document.querySelector('.quiz__start');
+//  const formQuiz = document.querySelector('.quiz-form');
+//  const formItems = formQuiz.querySelectorAll('fieldset');
+//  const formBtnNext = formQuiz.querySelectorAll('.quiz-form__btn-next');
+//  const formBtnPrev = formQuiz.querySelectorAll('.quiz-form__btn-prev');
+//  const overlay = document.querySelector('.overlay');
+//  const pastTestButton = document.querySelector('.pas__test-button');
+//
+//  const answersObj = {
+//    step0: { question: '', answers: [] },
+//    step1: { question: '', answers: [] },
+//    step2: { question: '', answers: [] },
+//    step3: { question: '', answers: [] },
+//    step4: { name: "", phone: "", email: "", call: "" },
+//  };
+//
+//  let questionNumb = 1;
+//
+//  // Инициализация квиза
+//  quizBody.style.display = "none";
+//  overlay.style.display = "none";
+//
+//  quizStart.addEventListener('click', () => {
+//    quizBody.style.display = "block";
+//    quizStart.style.display = "none";
+//    questionCounter(1);
+//  });
+//
+//  pastTestButton.addEventListener('click', () => {
+//    resetQuiz();
+//    overlay.style.display = "block";
+//    quizBody.style.display = "block";
+//  });
+//
+//  function questionCounter(index) {
+//    const quizIndicator = document.querySelector('.quiz-indicator');
+//    quizIndicator.innerHTML = `${index} / ${formItems.length}`;
+//
+//    const progress = document.querySelector(".quiz__progress-inner");
+//    progress.style.width = `${Math.round((index / formItems.length) * 100)}%`;
+//  }
+//
+//  function resetQuiz() {
+//    formItems.forEach((formItem, index) => {
+//      formItem.style.display = index === 0 ? "block" : "none";
+//      const inputs = formItem.querySelectorAll("input");
+//      inputs.forEach(input => {
+//        input.checked = false;
+//        input.parentNode.classList.remove("active-radio", "active-checkbox");
+//      });
+//    });
+//    formBtnNext.forEach(btn => btn.disabled = true);
+//    questionNumb = 1;
+//    questionCounter(questionNumb);
+//  }
+//
+//  formBtnPrev.forEach((btn, i) => {
+//    btn.addEventListener('click', (event) => {
+//      event.preventDefault();
+//      formItems[i + 1].style.display = "none";
+//      formItems[i].style.display = "block";
+//      questionNumb--;
+//      questionCounter(questionNumb);
+//    });
+//  });
+//
+//  formBtnNext.forEach((btn, btnIndex) => {
+//    btn.addEventListener('click', (event) => {
+//      event.preventDefault();
+//      formItems[btnIndex].style.display = "none";
+//      formItems[btnIndex + 1].style.display = "block";
+//      questionNumb++;
+//      questionCounter(questionNumb);
+//    });
+//    btn.disabled = true;
+//  });
+//
+//  formItems.forEach((formItem, formItemIndex) => {
+//    if (formItemIndex === 0) {
+//      formItem.style.display = "block";
+//    } else {
+//      formItem.style.display = "none";
+//    }
+//
+//    if (formItemIndex !== formItems.length - 1) {
+//      const itemTitle = formItem.querySelector('.quiz-form__title');
+//      answersObj[`step${formItemIndex}`].question = itemTitle.textContent;
+//
+//      formItem.addEventListener('change', (event) => {
+//        const target = event.target;
+//        const inputsChecked = formItem.querySelectorAll("input:checked");
+//
+//        answersObj[`step${formItemIndex}`].answers = Array.from(inputsChecked).map(input => input.value);
+//        formBtnNext[formItemIndex].disabled = inputsChecked.length === 0;
+//
+//        if (target.classList.contains("quiz-form__radio")) {
+//          formItem.querySelectorAll(".quiz-form__radio").forEach(input => {
+//            input.parentNode.classList.toggle("active-radio", input === target);
+//          });
+//        } else if (target.classList.contains("quiz-form__checkbox")) {
+//          target.parentNode.classList.toggle("active-checkbox");
+//        }
+//      });
+//    }
+//  });
+//
+//  const nameInput = document.getElementById('quiz-name');
+//  const phoneInput = document.getElementById('quiz-phone');
+//  const emailInput = document.getElementById('quiz-email');
+//  const policyCheckbox = document.getElementById('quiz-policy');
+//
+//  if (!nameInput || !phoneInput || !emailInput || !policyCheckbox) {
+//    console.error("Один из элементов формы не найден!");
+//    return;
+//  }
+//
+//  formQuiz.addEventListener('submit', (event) => {
+//    event.preventDefault();
+//
+//    answersObj.step4.name = nameInput.value.trim();
+//    answersObj.step4.phone = phoneInput.value.trim();
+//    answersObj.step4.email = emailInput.value.trim();
+//
+//    if (!answersObj.step4.name || !answersObj.step4.phone || !answersObj.step4.email) {
+//      alert("Пожалуйста, заполните все поля.");
+//      return;
+//    }
+//
+//    if (!policyCheckbox.checked) {
+//      alert("Дайте согласие на обработку персональных данных.");
+//      return;
+//    }
+//
+//    postData(answersObj)
+//      .then(res => res.json())
+//      .then(res => {
+//        if (res.status === "ok") {
+//          overlay.style.display = "none";
+//          quizBody.style.display = "none";
+//          quizStart.style.display = "block";
+//          formQuiz.reset();
+//          alert(res.message);
+//        } else if (res.status === "error") {
+//          alert(res.message);
+//        }
+//      })
+//      .catch(error => {
+//        console.error("Ошибка при отправке формы:", error);
+//        alert("Небходимо подключить серверную часть");
+//      });
+//  });
+//
+//  function postData(body) {
+//    return fetch("./server.php", {
+//      method: "POST",
+//      headers: { "Content-Type": "application/json" },
+//      body: JSON.stringify(body)
+//    });
+//  }
+//});
+//
+////------------------------------------------------------------------------Quiz
