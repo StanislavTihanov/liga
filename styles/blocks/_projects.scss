@@ -7,13 +7,12 @@
     }
     &__blocks {
        margin-bottom: 24px;
-       display: flex;
-       justify-content: space-between;
-       align-items: stretch;
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
        gap: 10px;
        @include mobile {
         flex-wrap: wrap;
-    }
+       }
     }
     &__block {
         background-color: var(--color-white);
@@ -32,7 +31,10 @@
             color: var(--color-blue);
             font-family: var(--font-family-M);
         }
-        @include mobile {
+        p {
+            line-height: 133%;
+        }
+        @include table {
             padding: 20px;
         }
     }
