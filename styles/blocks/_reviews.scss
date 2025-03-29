@@ -38,6 +38,13 @@
             padding-right: 35px;
             img {
                 margin-bottom: 22px;
+                @include mobile {
+                    margin-bottom: 10px;
+                }
+            }
+            @include mobile {
+                bottom: 20px;
+                left: 20px;
             }
         }
     }

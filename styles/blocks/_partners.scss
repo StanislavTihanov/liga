@@ -11,6 +11,10 @@
         &:first-child {
             margin-left: -250px;
             padding-right: 250px;
+            @include mobile {
+                margin-left: -100px;
+                padding-right: 100px;
+            }
         }
     }
     &__logo {
@@ -35,7 +39,7 @@
         animation: scroll-horizontal 20s linear infinite;
         width: max-content;
         @include mobile {
-            animation-duration: 60s;
+            animation-duration: 40s;
         }
     }
 }

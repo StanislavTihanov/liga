@@ -82,9 +82,13 @@
         }
         &_play {
             position: absolute;
+            width: 56px;
             bottom: 30px;
             left: 30px;
-            width: 56px;
+            @include mobile {
+                bottom: 10px;
+                left: 10px;
+            }
         }
         @include mobile {
             position: relative;
